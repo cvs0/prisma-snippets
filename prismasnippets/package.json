@@ -1,0 +1,20 @@
+{
+  "name": "prismasnippets",
+  "displayName": "prisma-snippets",
+  "description": "A VSCode extension to add snippets to make development using prisma easier.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "prisma",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

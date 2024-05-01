@@ -1,0 +1,11 @@
+{
+    "Mongo DB Prisma ID Shortcut": {
+        "prefix": "mdib",
+
+        "body": [
+            "id              String @id @default(auto()) @map(\"_id\") @db.ObjectId"
+        ],
+
+        "description": "Sets the ID for the model to the correct MongoDB format.",
+    }
+}
