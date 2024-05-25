@@ -7,5 +7,146 @@
         ],
 
         "description": "Sets the ID for the model to the correct MongoDB format.",
-    }
+    },
+    "Prisma Model Shortcut": {
+        "prefix": "pmodel",
+        "body": [
+            "model $1 {",
+            "  id    Int     @id @default(autoincrement())",
+            "  createdAt DateTime @default(now())",
+            "  updatedAt DateTime @updatedAt",
+            "  $2",
+            "}"
+        ],
+        "description": "Defines a new Prisma model."
+    },
+    "Prisma Enum Shortcut": {
+        "prefix": "penum",
+        "body": [
+            "enum $1 {",
+            "  $2",
+            "}"
+        ],
+        "description": "Defines a new Prisma enum."
+    },
+    "Prisma Relation Shortcut": {
+        "prefix": "prelation",
+        "body": [
+            "$1  $2[] @relation(references: [$3])"
+        ],
+        "description": "Defines a new Prisma relation."
+    },
+    "Prisma Field Shortcut": {
+        "prefix": "pfield",
+        "body": [
+            "$1  $2"
+        ],
+        "description": "Defines a new Prisma field."
+    },
+    "Prisma Unique Field Shortcut": {
+        "prefix": "punique",
+        "body": [
+            "$1  $2  @unique"
+        ],
+        "description": "Defines a new Prisma field with a unique constraint."
+    },
+    "Prisma Optional Field Shortcut": {
+        "prefix": "poptional",
+        "body": [
+            "$1  $2?"
+        ],
+        "description": "Defines a new optional Prisma field."
+    },
+    "Prisma DateTime Field Shortcut": {
+        "prefix": "pdatetime",
+        "body": [
+            "$1  DateTime  @default(now())"
+        ],
+        "description": "Defines a new DateTime Prisma field with a default value of now."
+    },
+    "Prisma Model with Relations Shortcut": {
+        "prefix": "pmodelrel",
+        "body": [
+            "model $1 {",
+            "  id    Int     @id @default(autoincrement())",
+            "  createdAt DateTime @default(now())",
+            "  updatedAt DateTime @updatedAt",
+            "  $2  $3[]",
+            "}"
+        ],
+        "description": "Defines a new Prisma model with relations."
+    },
+    "Prisma Query Shortcut": {
+        "prefix": "pquery",
+        "body": [
+            "const $1 = await prisma.$2.findMany({",
+            "  where: {",
+            "    $3",
+            "  }",
+            "})"
+        ],
+        "description": "Defines a new Prisma query."
+    },
+    "Prisma Update Query Shortcut": {
+        "prefix": "pupdate",
+        "body": [
+            "const $1 = await prisma.$2.update({",
+            "  where: { id: $3 },",
+            "  data: {",
+            "    $4",
+            "  }",
+            "})"
+        ],
+        "description": "Defines a new Prisma update query."
+    },
+    "Prisma Delete Query Shortcut": {
+        "prefix": "pdelete",
+        "body": [
+            "const $1 = await prisma.$2.delete({",
+            "  where: { id: $3 },",
+            "})"
+        ],
+        "description": "Defines a new Prisma delete query."
+    },
+    "Prisma Create Query Shortcut": {
+        "prefix": "pcreate",
+        "body": [
+            "const $1 = await prisma.$2.create({",
+            "  data: {",
+            "    $3",
+            "  }",
+            "})"
+        ],
+        "description": "Defines a new Prisma create query."
+    },
+    "Prisma Find Unique Query Shortcut": {
+        "prefix": "pfind",
+        "body": [
+            "const $1 = await prisma.$2.findUnique({",
+            "  where: { id: $3 },",
+            "})"
+        ],
+        "description": "Defines a new Prisma find unique query."
+    },
+    "Prisma Count Query Shortcut": {
+        "prefix": "pcount",
+        "body": [
+            "const $1 = await prisma.$2.count()"
+        ],
+        "description": "Defines a new Prisma count query."
+    },
+    "Prisma Find First Query Shortcut": {
+        "prefix": "pfirst",
+        "body": [
+            "const $1 = await prisma.$2.findFirst()"
+        ],
+        "description": "Defines a new Prisma find first query."
+    },
+    "Prisma Client Initialization": {
+        "prefix": "pclient",
+        "body": [
+            "const prisma = new PrismaClient()"
+        ],
+        "description": "Initializes a new Prisma Client instance."
+    },
 }
