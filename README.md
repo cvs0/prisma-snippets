@@ -9,7 +9,6 @@ This VSCode extension provides a collection of handy snippets that make working 
 - **Variety**: Snippets for models, enums, relations, fields, and queries.
 - **Time-saving**: Speed up your development process.
 
-
 ## Shortcuts
 - `mdib`: Adds a shortcut for a MongoDB ID line
 - `pmodel`: Defines a new Prisma model
